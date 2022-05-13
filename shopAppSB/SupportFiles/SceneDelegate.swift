@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  ShoppingCartApp
+//  shopAppSB
 //
-//  Created by developer on 5/11/22.
+//  Created by developer on 5/12/22.
 //
 
 import UIKit
