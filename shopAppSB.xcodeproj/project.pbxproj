@@ -11,6 +11,7 @@
 		8B3B7E212830679A00592C12 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B7E1F2830679A00592C12 /* TableViewCell.swift */; };
 		8B3B7E222830679B00592C12 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3B7E202830679A00592C12 /* TableViewCell.xib */; };
 		8B3B7E2428311C7F00592C12 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B7E2328311C7F00592C12 /* CartViewController.swift */; };
+		8B3B7E26283180AC00592C12 /* PurchasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B7E25283180AC00592C12 /* PurchasedViewController.swift */; };
 		8B523ED7282D62500017DB32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523ED6282D62500017DB32 /* AppDelegate.swift */; };
 		8B523ED9282D62500017DB32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523ED8282D62500017DB32 /* SceneDelegate.swift */; };
 		8B523EDB282D62500017DB32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523EDA282D62500017DB32 /* ViewController.swift */; };
@@ -26,6 +27,7 @@
 		8B3B7E1F2830679A00592C12 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		8B3B7E202830679A00592C12 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		8B3B7E2328311C7F00592C12 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		8B3B7E25283180AC00592C12 /* PurchasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedViewController.swift; sourceTree = "<group>"; };
 		8B523ED3282D62500017DB32 /* shopAppSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopAppSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B523ED6282D62500017DB32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B523ED8282D62500017DB32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				8B523EDA282D62500017DB32 /* ViewController.swift */,
 				8B3B7E2328311C7F00592C12 /* CartViewController.swift */,
+				8B3B7E25283180AC00592C12 /* PurchasedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				8B523ED9282D62500017DB32 /* SceneDelegate.swift in Sources */,
 				8B3B7E212830679A00592C12 /* TableViewCell.swift in Sources */,
 				8B3B7E1E28300C6000592C12 /* ShopViewModel.swift in Sources */,
+				8B3B7E26283180AC00592C12 /* PurchasedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

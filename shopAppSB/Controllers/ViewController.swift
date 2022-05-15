@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var browseTable: UITableView!
     
     override func viewDidLoad() {
+        self.cleanUpSaved()
         super.viewDidLoad()
         browseTable.dataSource = self
         browseTable.delegate = self
@@ -51,6 +52,19 @@ class ViewController: UIViewController {
         vm.loadProducts()
     }
     
+    func cleanUpSaved() {
+        let fileManager = FileManager.default
+        let cacheDirectory = FileManager.SearchPathDirectory.cachesDirectory
+        let folderURLs = FileManager.default.urls(for: cacheDirectory, in: .userDomainMask)
+        guard let fileURL = folderURLs.first?.appendingPathComponent("purchasedItems") else { return }
+        do {
+            try fileManager.removeItem(at: fileURL)
+        } catch {
+            print(error)
+        }
+   
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CartSegue" {
             let destination = segue.destination as? CartViewController
@@ -60,6 +74,15 @@ class ViewController: UIViewController {
             }
             destination.vm = self.vm.cart
             
+        }
+        
+        if segue.identifier == "PurchasedSegue" {
+            let destination = segue.destination as? PurchasedViewController
+            guard let destination = destination else {
+                print("couldn't get purchasedviewcontroller")
+                return
+            }
+            destination.vm = CartViewModel.retrieveFromPhone()
         }
         
     }

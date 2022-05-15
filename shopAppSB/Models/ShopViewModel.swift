@@ -15,6 +15,41 @@ class CartViewModel {
         }
     }
     
+    static func saveToPhone(products: [ProductViewModel]) {
+        let previouslySaved = retrieveFromPhone()
+        var purchased = previouslySaved
+        products.forEach({
+            purchased.append($0)
+        })
+        
+        let purchasedItems = purchased.map {
+            $0.item
+        }
+            
+        
+        let cacheDirectory = FileManager.SearchPathDirectory.cachesDirectory
+        let folderURLs = FileManager.default.urls(for: cacheDirectory, in: .userDomainMask)
+        guard let fileURL = folderURLs.first?.appendingPathComponent("purchasedItems") else { return }
+        guard let data = try? JSONEncoder().encode(purchasedItems) else { return }
+        
+        try? data.write(to: fileURL, options: .atomicWrite)
+        
+    }
+    
+    static func retrieveFromPhone() -> [ProductViewModel] {
+        let cacheDirectory = FileManager.SearchPathDirectory.cachesDirectory
+        let folderURLs = FileManager.default.urls(for: cacheDirectory, in: .userDomainMask)
+        guard let fileURL = folderURLs.first?.appendingPathComponent("purchasedItems") else { fatalError() }
+        if let data = FileManager.default.contents(atPath: fileURL.path) {
+            if let items = try? JSONDecoder().decode([Item].self, from: data) {
+                return items.map {
+                    ProductViewModel(item: $0)
+                }
+            }
+        }
+        return []
+    }
+    
     var cartIconString: String = "cart"
     
     var updateCartIcon: () -> Void = { print("The view controller needs to tell me how to do this") }

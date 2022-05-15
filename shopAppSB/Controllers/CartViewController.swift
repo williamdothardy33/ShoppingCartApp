@@ -20,18 +20,6 @@ class CartViewController: UIViewController {
         cartTableView.register(nib, forCellReuseIdentifier: "Item")
     }
 
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension CartViewController: UITableViewDelegate, UITableViewDataSource {
@@ -40,20 +28,22 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     private func buy(rowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-        let buyAction = UIContextualAction(style: .normal, title: "Buy") {
+        let buyAction = UIContextualAction(style: .destructive, title: "Buy") {
             _, _, _ in
             if let cartItems = self.vm?.cartItems {
                 let item = cartItems[cartItems.count - 1 - indexPath.row]
-                print("user bought: \(item.name ?? "") which cost: \(item.price ?? "")")
+                CartViewModel.saveToPhone(products: [item])
+                /*print("user bought: \(item.name ?? "") which cost: \(item.price ?? "")")*/
             }
             
                 
         }
+        buyAction.backgroundColor = .systemTeal
         return buyAction
     }
     
     private func remove(rowAtIndexPath indexPath: IndexPath) -> UIContextualAction {
-        let removeAction = UIContextualAction(style: .destructive, title: "Remove from cart") {
+        let removeAction = UIContextualAction(style: .destructive, title: "Remove") {
             _, _, _ in
             if let cartItems = self.vm?.cartItems {
                 let item = cartItems[cartItems.count - 1 - indexPath.row]
@@ -70,6 +60,8 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             }
                 
         }
+        
+        removeAction.backgroundColor = .systemYellow
         return removeAction
     }
     

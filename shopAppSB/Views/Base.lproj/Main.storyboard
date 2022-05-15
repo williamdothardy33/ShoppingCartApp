@@ -43,7 +43,7 @@
                     <navigationItem key="navigationItem" title="Browse" id="HDb-FR-QD7">
                         <barButtonItem key="leftBarButtonItem" image="music.note.list" catalog="system" style="plain" id="hpy-uU-j7v">
                             <connections>
-                                <segue destination="2Fd-eQ-YfK" kind="show" id="dBa-vH-fCr"/>
+                                <segue destination="2Fd-eQ-YfK" kind="show" identifier="PurchasedSegue" id="dBa-vH-fCr"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" style="plain" id="F8C-rj-Rru">
@@ -97,7 +97,7 @@
         <!--My Songs-->
         <scene sceneID="sIZ-MW-M94">
             <objects>
-                <viewController id="2Fd-eQ-YfK" sceneMemberID="viewController">
+                <viewController id="2Fd-eQ-YfK" customClass="PurchasedViewController" customModule="shopAppSB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OBH-7D-YMN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +119,9 @@
                     <navigationItem key="navigationItem" title="My Songs" id="81z-2Z-g5g">
                         <barButtonItem key="rightBarButtonItem" image="xmark.circle" catalog="system" style="plain" id="URu-L3-0lw"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="purchasedTableView" destination="h4N-j8-DYb" id="nXY-Jq-D3n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrO-63-kVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
