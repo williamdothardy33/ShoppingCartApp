@@ -8,9 +8,12 @@ import UIKit
 import Foundation
 
 
-let itemStr = "https://makeup-api.herokuapp.com/api/v1/products.json"
+let itemStr = "https://fakestoreapi.com/products"
 
-struct Webservice {
+class Webservice {
+    static var shared = Webservice()
+    private init() { }
+    var cache = NSCache<NSString, NSData>()
     
     func getItems(completion: @escaping ([Item]) -> Void) {
         guard let url = URL(string: itemStr) else {
@@ -43,17 +46,19 @@ struct Webservice {
         }.resume()
     }
     
-    func getImage(imageUrl: String, completion: @escaping (UIImage?) -> Void) {
+    func getImage(imageUrl: String, completion: @escaping (Data?) -> Void) {
+        
+        if let imageData = cache.object(forKey: imageUrl as NSString) {
+            completion(imageData as Data)
+            return
+        }
+        
         guard let url = URL(string: imageUrl) else {
             print("invalid url")
             return
         }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil else {
-                print("no data, networking error")
-                return
-            }
             
             guard
                 let httpResonse = response as? HTTPURLResponse,
@@ -62,11 +67,17 @@ struct Webservice {
                 print("http status code error")
                 return
             }
-            if let image = UIImage(data: data) {
-                completion(image)
-            } else {
-                completion(nil)
+            
+            guard let data = data, error == nil else {
+                print("no data, networking error")
+                return
             }
+            
+            
+            self.cache.setObject(data as NSData, forKey: imageUrl as NSString)
+            
+            completion(data)
+            
         }.resume()
     }
 }
