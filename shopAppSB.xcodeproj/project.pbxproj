@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B3B7E1E28300C6000592C12 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B7E1D28300C6000592C12 /* ShopViewModel.swift */; };
+		8B3B7E212830679A00592C12 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B7E1F2830679A00592C12 /* TableViewCell.swift */; };
+		8B3B7E222830679B00592C12 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8B3B7E202830679A00592C12 /* TableViewCell.xib */; };
+		8B3B7E2428311C7F00592C12 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B7E2328311C7F00592C12 /* CartViewController.swift */; };
+		8B3B7E26283180AC00592C12 /* PurchasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B3B7E25283180AC00592C12 /* PurchasedViewController.swift */; };
 		8B523ED7282D62500017DB32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523ED6282D62500017DB32 /* AppDelegate.swift */; };
 		8B523ED9282D62500017DB32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523ED8282D62500017DB32 /* SceneDelegate.swift */; };
 		8B523EDB282D62500017DB32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523EDA282D62500017DB32 /* ViewController.swift */; };
@@ -15,10 +20,14 @@
 		8B523EE3282D62500017DB32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B523EE1282D62500017DB32 /* LaunchScreen.storyboard */; };
 		8B523EF0282D79BD0017DB32 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523EEF282D79BD0017DB32 /* WebService.swift */; };
 		8B523EF2282D89130017DB32 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523EF1282D89130017DB32 /* Model.swift */; };
-		8B523EF6282D9AC50017DB32 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B523EF5282D9AC50017DB32 /* ItemCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B3B7E1D28300C6000592C12 /* ShopViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewModel.swift; sourceTree = "<group>"; };
+		8B3B7E1F2830679A00592C12 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		8B3B7E202830679A00592C12 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		8B3B7E2328311C7F00592C12 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		8B3B7E25283180AC00592C12 /* PurchasedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedViewController.swift; sourceTree = "<group>"; };
 		8B523ED3282D62500017DB32 /* shopAppSB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopAppSB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B523ED6282D62500017DB32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B523ED8282D62500017DB32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +38,6 @@
 		8B523EE4282D62500017DB32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8B523EEF282D79BD0017DB32 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		8B523EF1282D89130017DB32 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		8B523EF5282D9AC50017DB32 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				8B523EDA282D62500017DB32 /* ViewController.swift */,
+				8B3B7E2328311C7F00592C12 /* CartViewController.swift */,
+				8B3B7E25283180AC00592C12 /* PurchasedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -84,7 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				8B523EDC282D62500017DB32 /* Main.storyboard */,
-				8B523EF5282D9AC50017DB32 /* ItemCell.swift */,
+				8B3B7E1F2830679A00592C12 /* TableViewCell.swift */,
+				8B3B7E202830679A00592C12 /* TableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -93,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				8B523EF1282D89130017DB32 /* Model.swift */,
+				8B3B7E1D28300C6000592C12 /* ShopViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B523EE3282D62500017DB32 /* LaunchScreen.storyboard in Resources */,
+				8B3B7E222830679B00592C12 /* TableViewCell.xib in Resources */,
 				8B523EE0282D62500017DB32 /* Assets.xcassets in Resources */,
 				8B523EDE282D62500017DB32 /* Main.storyboard in Resources */,
 			);
@@ -181,10 +194,13 @@
 			files = (
 				8B523EF2282D89130017DB32 /* Model.swift in Sources */,
 				8B523EDB282D62500017DB32 /* ViewController.swift in Sources */,
-				8B523EF6282D9AC50017DB32 /* ItemCell.swift in Sources */,
 				8B523EF0282D79BD0017DB32 /* WebService.swift in Sources */,
 				8B523ED7282D62500017DB32 /* AppDelegate.swift in Sources */,
+				8B3B7E2428311C7F00592C12 /* CartViewController.swift in Sources */,
 				8B523ED9282D62500017DB32 /* SceneDelegate.swift in Sources */,
+				8B3B7E212830679A00592C12 /* TableViewCell.swift in Sources */,
+				8B3B7E1E28300C6000592C12 /* ShopViewModel.swift in Sources */,
+				8B3B7E26283180AC00592C12 /* PurchasedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
