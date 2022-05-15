@@ -29,6 +29,7 @@ class TableViewCell: UITableViewCell {
     }
     override func prepareForReuse() {
         self.productVM = nil
+        self.cellImage.image = nil
     }
     
     func affixModelToCell() {

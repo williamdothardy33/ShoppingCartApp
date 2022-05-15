@@ -93,6 +93,7 @@ extension CartViewController: UITableViewDelegate, UITableViewDataSource {
             print("unable to set cart items")
             return UITableViewCell()
         }
+        //cell.cellImage.image = nil
         
         let productVM = cartItems[cartItems.count - 1 - indexPath.row]
         productVM.rowNumber = indexPath.row
