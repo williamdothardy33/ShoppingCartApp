@@ -146,7 +146,7 @@ class ProductViewModel {
         self.isForItem = isForItem
         self.name = isForItem ? item?.name : nil
         if let price = item?.price {
-            self.price = isForItem ? String(price) : nil
+            self.price = isForItem ? String(format: "%.2f", price) : nil
         }
     }
     
