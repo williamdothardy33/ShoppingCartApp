@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9nZ-1A-2mM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Browse-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="shopAppSB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Sd1-5P-IvO">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="9ZZ-s4-4Xh">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9ZZ-s4-4Xh" id="QBW-nj-Ava" customClass="ItemCell" customModule="shopAppSB" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Sd1-5P-IvO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1WQ-KQ-zfc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Sd1-5P-IvO" secondAttribute="bottom" id="4Ij-oc-XHa"/>
+                            <constraint firstItem="Sd1-5P-IvO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="BTj-UB-smG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sd1-5P-IvO" secondAttribute="trailing" id="zdx-Nd-lnw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Browse" id="HDb-FR-QD7">
+                        <barButtonItem key="leftBarButtonItem" image="music.note.list" catalog="system" style="plain" id="hpy-uU-j7v">
+                            <connections>
+                                <segue destination="2Fd-eQ-YfK" kind="show" identifier="PurchasedSegue" id="dBa-vH-fCr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart" catalog="system" style="plain" id="F8C-rj-Rru">
+                            <connections>
+                                <segue destination="veu-kp-pH2" kind="show" identifier="CartSegue" id="C8p-zJ-hVu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="browseTable" destination="Sd1-5P-IvO" id="Rey-hc-MDs"/>
+                        <outlet property="cartIcon" destination="F8C-rj-Rru" id="EUh-fo-wPj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="113"/>
+        </scene>
+        <!--Cart-->
+        <scene sceneID="bYC-ww-Iyb">
+            <objects>
+                <viewController id="veu-kp-pH2" customClass="CartViewController" customModule="shopAppSB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Udd-7j-HN0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fqw-Id-oUk">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0k3-aD-IGD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="fqw-Id-oUk" firstAttribute="leading" secondItem="0k3-aD-IGD" secondAttribute="leading" id="9D6-vh-q2O"/>
+                            <constraint firstItem="0k3-aD-IGD" firstAttribute="bottom" secondItem="fqw-Id-oUk" secondAttribute="bottom" id="Ev0-Am-Qfa"/>
+                            <constraint firstItem="0k3-aD-IGD" firstAttribute="trailing" secondItem="fqw-Id-oUk" secondAttribute="trailing" id="iwK-Qw-Z2G"/>
+                            <constraint firstItem="fqw-Id-oUk" firstAttribute="top" secondItem="0k3-aD-IGD" secondAttribute="top" constant="20" id="zv5-6g-FEg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cart" id="pdg-AL-hyL">
+                        <barButtonItem key="rightBarButtonItem" title="Buy" style="plain" id="2R4-qK-bTA"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cartTableView" destination="fqw-Id-oUk" id="Io7-Fr-4m1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Brs-eW-lOa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264" y="496"/>
+        </scene>
+        <!--My Songs-->
+        <scene sceneID="sIZ-MW-M94">
+            <objects>
+                <viewController id="2Fd-eQ-YfK" customClass="PurchasedViewController" customModule="shopAppSB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OBH-7D-YMN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="h4N-j8-DYb">
+                                <rect key="frame" x="0.0" y="108" width="414" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Di6-AI-R80"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Di6-AI-R80" firstAttribute="bottom" secondItem="h4N-j8-DYb" secondAttribute="bottom" id="1Xc-Ik-4A5"/>
+                            <constraint firstItem="h4N-j8-DYb" firstAttribute="top" secondItem="Di6-AI-R80" secondAttribute="top" constant="20" id="D6N-3W-dU0"/>
+                            <constraint firstItem="Di6-AI-R80" firstAttribute="trailing" secondItem="h4N-j8-DYb" secondAttribute="trailing" id="LAA-ty-RyR"/>
+                            <constraint firstItem="h4N-j8-DYb" firstAttribute="leading" secondItem="Di6-AI-R80" secondAttribute="leading" id="y5D-7A-cl9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My Songs" id="81z-2Z-g5g">
+                        <barButtonItem key="rightBarButtonItem" image="xmark.circle" catalog="system" style="plain" id="URu-L3-0lw"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="purchasedTableView" destination="h4N-j8-DYb" id="nXY-Jq-D3n"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jrO-63-kVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1264" y="-207"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BQn-Sa-Lf2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9nZ-1A-2mM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IJh-y7-7Qd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="nmn-kV-apJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cda-wB-n6v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
